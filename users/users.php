@@ -29,33 +29,8 @@ function createUser($data)
     return $data;
 }
 
-function updateUser($data, $id)
-{
-    $updateUser = [];
-    $users = getUsers();
-    foreach ($users as $i => $user) {
-        if ($user['id'] == $id) {
-            $users[$i] = $updateUser = array_merge($user, $data);
-        }
-    }
 
-    putJson($users);
 
-    return $updateUser;
-}
-
-function deleteUser($id)
-{
-    $users = getUsers();
-
-    foreach ($users as $i => $user) {
-        if ($user['id'] == $id) {
-            array_splice($users, $i, 1);
-        }
-    }
-
-    putJson($users);
-}
 
 
 
